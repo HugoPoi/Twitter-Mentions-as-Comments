@@ -73,7 +73,7 @@ class Twitter_Mentions_As_Comments extends Plugin_Boilerplate_v_2 {
 		add_filter( 'tmac_lastID', array( $this, 'lastID_float_fix'), 10, 2 );
 
 		//avatars
-		add_filter( 'get_avatar', array( $this, 'filter_avatar' ), 10, 2  );
+		add_filter( 'get_avatar', array( $this, 'filter_avatar' ), 11, 2  );
 		
 		//init options
 		add_action( 'tmac_options_init', array( $this, 'options_init' ), 10 );
