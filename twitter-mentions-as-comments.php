@@ -295,7 +295,8 @@ class Twitter_Mentions_As_Comments extends Plugin_Boilerplate_v_2 {
     if($this->options->check_only_custom){
       $posts = get_posts( array(
         'numberposts' => -1,
-        'meta_key' => 'tmac_custom_query'
+        'meta_key' => 'tmac_custom_query',
+        'post_type' => 'any'
       ));
     }else{
       //Get all posts
