@@ -508,7 +508,7 @@ class Twitter_Mentions_As_Comments extends Plugin_Boilerplate_v_2 {
 			return $avatar;
 
 		//replace the twitter image with the default avatar and return
-		return preg_replace("/http:\/\/([^']*)/", $url, $avatar);
+		return preg_replace("/src=\"([^\"]*)\"|src=\'([^\']*)\'/", 'src="'.$url.'"', $avatar);
 
 	}
 
