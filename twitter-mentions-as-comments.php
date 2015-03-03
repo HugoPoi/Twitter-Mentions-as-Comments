@@ -268,7 +268,13 @@ class Twitter_Mentions_As_Comments extends Plugin_Boilerplate_v_2 {
 			//Prime profile image cache
 			$this->calls->get_profile_image( $tweet->user->screen_name, true );
 
-			$this->api->do_action( 'insert_mention', $comment_id, $commentdata );
+      $this->api->do_action( 'insert_mention', $comment_id, $commentdata );
+
+      if( isset($tweet->entities->media) ){
+        foreach( $tweet->entities->media as $media ){
+          add_comment_meta($comment_id, 'twitter_media_url', $media->media_url );
+        }
+      }
 
 		}
 
